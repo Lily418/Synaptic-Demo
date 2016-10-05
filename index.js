@@ -1,5 +1,6 @@
 'use strict'
 
+let synaptic = require('synaptic');
 
 let encode = (number) => {
   return number / 20
@@ -9,11 +10,10 @@ let decode = (number) => {
   return number * 20
 }
 
-let addNumbers= (network, number1, number2) => {
+let addNumbers = (network, number1, number2) => {
   return decode(network.activate([encode(number1), encode(number2)])[0])
 }
 
-let synaptic = require('synaptic');
 
 let trainingData = [
   {
